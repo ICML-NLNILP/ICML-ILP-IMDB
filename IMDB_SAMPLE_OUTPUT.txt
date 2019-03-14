@@ -1,0 +1,104 @@
+
+L1-0
+L2-0
+L3-0
+ALLTIMESTAMP-0
+LR-0.003
+FILT_TH_MEAN-1
+FILT_TH_MAX-1
+OPT_TH-1
+PLOGENT-0.5
+BETA1-0.9
+BETA2-0.999
+EPS-1e-06
+GPU-1
+ITER-100000
+ITER2-100
+LOGDIR-./logs/Logic
+TB-0
+ADDGRAPH-1
+CLIP_NORM-0
+PRINT_WEIGHTS-0
+SEED-0
+BINARAIZE-0
+MAX_DISP_ITEMS-50
+W_DISP_TH-0.1
+DISP_BATCH_VALUES-[]
+Tensorflow Version :  1.12.0
+2019-03-13 22:38:34.483784: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2
+2019-03-13 22:38:34.659688: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties:
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.607
+pciBusID: 0000:01:00.0
+totalMemory: 11.00GiB freeMemory: 9.10GiB
+2019-03-13 22:38:34.674985: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-03-13 22:38:35.005460: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-03-13 22:38:35.014986: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0
+2019-03-13 22:38:35.018248: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N
+2019-03-13 22:38:35.021139: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8786 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+summary all variables
+<tf.Variable 'ILP/workedUnder_AND:0' shape=(1, 36) dtype=float32_ref>
+<tf.Variable 'ILP/workedUnder_OR:0' shape=(1, 1) dtype=float32_ref>
+building optimizer...
+building optimizer finished. elapsed: 0:00:01.113023
+***********************
+number of trainable parameters : 37
+***********************
+--------------------------------------------------------
+Classifdication error Count 56  of total 3721
+accuracy score : 0.9850 , AUROC score : 0.5000,  AUPR score : 0.5075
+------------------------------------------------------------------
+epoch= 0 cost= 350.7564 elapsed :  0:00:31.485846 mismatch counts OrderedDict([('movie', 0.0), ('workedUnder', 62.850235)])
+workedUnder(A,B)
+         :- [0.70] ([0.48]director(A),[0.40]director(B),[0.48]director(C),[0.60]actor(A),[0.33]actor(B),[0.43]actor(C),[0.45]isFemale(A),[0.60]isFemale(B),[0.32]isFemale(C),[0.58]movie(D,A),[0.43]movie(D,B),[0.51]movie(D,C),[0.47]workedUnder(A,B),[0.29]workedUnder(A,C),[0.59]workedUnder(B,A),[0.55]workedUnder(B,C),[0.51]workedUnder(C,A),[0.54]workedUnder(C,B),[0.50]not director(A),[0.60]not director(B),[0.56]not director(C),[0.69]not actor(A),[0.62]not actor(B),[0.54]not actor(C),[0.50]not isFemale(A),[0.58]not isFemale(B),[0.32]not isFemale(C),[0.61]not movie(D,A),[0.47]not movie(D,B),[0.53]not movie(D,C),[0.33]not workedUnder(A,B),[0.27]not workedUnder(A,C),[0.53]not workedUnder(B,A),[0.62]not workedUnder(B,C),[0.60]not workedUnder(C,A),[0.36]not workedUnder(C,B) )
+--------------------------------------------------------
+Classifdication error Count 56  of total 3721
+accuracy score : 0.9850 , AUROC score : 0.5000,  AUPR score : 0.5075
+------------------------------------------------------------------
+epoch= 1 cost= 115.368706 elapsed :  0:00:09.423820 mismatch counts OrderedDict([('movie', 0.0), ('workedUnder', 71.55881)])
+workedUnder(A,B)
+         :- [0.80] ([0.34]director(A),[0.95]director(B),[0.41]director(C),actor(A),[0.13]actor(B),[0.35]actor(C),[0.40]isFemale(A),[0.44]isFemale(B),[0.24]isFemale(C),[0.50]movie(D,A),[0.50]movie(D,B),[0.39]movie(D,C),[0.37]workedUnder(A,B),[0.19]workedUnder(A,C),[0.47]workedUnder(B,A),[0.42]workedUnder(B,C),[0.39]workedUnder(C,A),[0.44]workedUnder(C,B),[0.86]not director(A),[0.17]not director(B),[0.29]not director(C),[0.48]not actor(A),not actor(B),[0.40]not actor(C),[0.30]not isFemale(A),[0.91]not isFemale(B),[0.18]not isFemale(C),[0.48]not movie(D,A),[0.29]not movie(D,B),[0.41]not movie(D,C),[0.25]not workedUnder(A,C),[0.71]not workedUnder(B,A),[0.78]not workedUnder(B,C),[0.77]not workedUnder(C,A) )
+--------------------------------------------------------
+Classifdication error Count 56  of total 3721
+accuracy score : 0.9850 , AUROC score : 0.5000,  AUPR score : 0.5075
+------------------------------------------------------------------
+epoch= 2 cost= 105.993126 elapsed :  0:00:09.260278 mismatch counts OrderedDict([('movie', 0.0), ('workedUnder', 70.13066)])
+workedUnder(A,B)
+         :- [0.80] ([0.33]director(A),director(B),[0.37]director(C),actor(A),[0.13]actor(B),[0.37]actor(C),[0.34]isFemale(A),[0.43]isFemale(B),[0.23]isFemale(C),[0.77]movie(D,A),[0.83]movie(D,B),[0.27]movie(D,C),[0.39]workedUnder(A,B),[0.19]workedUnder(A,C),[0.46]workedUnder(B,A),[0.42]workedUnder(B,C),[0.38]workedUnder(C,A),[0.45]workedUnder(C,B),[0.92]not director(A),[0.14]not director(B),[0.38]not director(C),[0.45]not actor(A),not actor(B),[0.39]not actor(C),[0.35]not isFemale(A),[0.92]not isFemale(B),[0.18]not isFemale(C),[0.39]not movie(D,A),[0.22]not movie(D,B),[0.46]not movie(D,C),[0.45]not workedUnder(A,C),[0.71]not workedUnder(B,A),[0.79]not workedUnder(B,C),[0.80]not workedUnder(C,A) )
+--------------------------------------------------------
+Classifdication error Count 56  of total 3721
+accuracy score : 0.9850 , AUROC score : 0.5000,  AUPR score : 0.5075
+------------------------------------------------------------------
+epoch= 3 cost= 89.39728 elapsed :  0:00:09.276213 mismatch counts OrderedDict([('movie', 0.0), ('workedUnder', 61.8189)])
+workedUnder(A,B)
+         :- [0.82] ([0.30]director(A),director(B),[0.32]director(C),actor(A),[0.12]actor(B),[0.35]actor(C),[0.33]isFemale(A),[0.40]isFemale(B),[0.21]isFemale(C),movie(D,A),movie(D,B),[0.10]movie(D,C),[0.52]workedUnder(A,B),[0.17]workedUnder(A,C),[0.43]workedUnder(B,A),[0.39]workedUnder(B,C),[0.35]workedUnder(C,A),[0.40]workedUnder(C,B),[0.94]not director(A),[0.13]not director(B),[0.43]not director(C),[0.42]not actor(A),not actor(B),[0.36]not actor(C),[0.31]not isFemale(A),[0.92]not isFemale(B),[0.17]not isFemale(C),[0.21]not movie(D,A),[0.13]not movie(D,B),[0.72]not movie(D,C),[0.69]not workedUnder(A,C),[0.71]not workedUnder(B,A),[0.80]not workedUnder(B,C),[0.81]not workedUnder(C,A),[0.12]not workedUnder(C,B) )
+--------------------------------------------------------
+Classifdication error Count 0  of total 3721
+accuracy score : 1.0000 , AUROC score : 1.0000,  AUPR score : 1.0000
+------------------------------------------------------------------
+epoch= 4 cost= 28.020191 elapsed :  0:00:09.280185 mismatch counts OrderedDict([('movie', 0.0), ('workedUnder', 24.475788)])
+workedUnder(A,B)
+         :- [0.90] ([0.18]director(A),director(B),[0.21]director(C),actor(A),[0.63]actor(C),[0.21]isFemale(A),[0.25]isFemale(B),[0.18]isFemale(C),movie(D,A),movie(D,B),workedUnder(A,B),[0.26]workedUnder(B,A),[0.23]workedUnder(B,C),[0.21]workedUnder(C,A),[0.20]workedUnder(C,B),[0.95]not director(A),[0.18]not director(C),[0.27]not actor(A),not actor(B),[0.15]not actor(C),[0.17]not isFemale(A),[0.92]not isFemale(B),not movie(D,C),[0.78]not workedUnder(A,C),[0.71]not workedUnder(B,A),[0.80]not workedUnder(B,C),[0.81]not workedUnder(C,A),not workedUnder(C,B) )
+--------------------------------------------------------
+Classifdication error Count 0  of total 3721
+accuracy score : 1.0000 , AUROC score : 1.0000,  AUPR score : 1.0000
+------------------------------------------------------------------
+epoch= 5 cost= 2.245776 elapsed :  0:00:09.300149 mismatch counts OrderedDict([('movie', 0.0), ('workedUnder', 2.5451183)])
+workedUnder(A,B)
+         :- [0.95] (director(B),[0.11]director(C),actor(A),[0.60]actor(C),[0.11]isFemale(A),[0.14]isFemale(B),movie(D,A),movie(D,B),workedUnder(A,B),[0.14]workedUnder(B,A),[0.13]workedUnder(B,C),[0.11]workedUnder(C,A),[0.11]workedUnder(C,B),not director(A),[0.12]not director(C),[0.15]not actor(A),not actor(B),[0.10]not isFemale(A),[0.92]not isFemale(B),not movie(D,C),[0.77]not workedUnder(A,C),[0.71]not workedUnder(B,A),[0.80]not workedUnder(B,C),[0.81]not workedUnder(C,A),not workedUnder(C,B) )
+--------------------------------------------------------
+Classifdication error Count 0  of total 3721
+accuracy score : 1.0000 , AUROC score : 1.0000,  AUPR score : 1.0000
+------------------------------------------------------------------
+epoch= 6 cost= 0.66142595 elapsed :  0:00:09.283222 mismatch counts OrderedDict([('movie', 0.0), ('workedUnder', 1.0298033)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/workedUnder_AND:0' shape=(1, 36) dtype=float32_ref> (0, 1)
+removing <tf.Variable 'ILP/workedUnder_AND:0' shape=(1, 36) dtype=float32_ref> (0, 3)
+removing <tf.Variable 'ILP/workedUnder_AND:0' shape=(1, 36) dtype=float32_ref> (0, 5)
+removing <tf.Variable 'ILP/workedUnder_AND:0' shape=(1, 36) dtype=float32_ref> (0, 31)
+removing <tf.Variable 'ILP/workedUnder_AND:0' shape=(1, 36) dtype=float32_ref> (0, 32)
+removing <tf.Variable 'ILP/workedUnder_AND:0' shape=(1, 36) dtype=float32_ref> (0, 33)
+removing <tf.Variable 'ILP/workedUnder_AND:0' shape=(1, 36) dtype=float32_ref> (0, 34)
+removing <tf.Variable 'ILP/workedUnder_AND:0' shape=(1, 36) dtype=float32_ref> (0, 35)
+workedUnder(A,B)
+         :- [0.95] ([0.12]isFemale(B),movie(D,A),movie(D,B),workedUnder(A,B),[0.12]workedUnder(B,A),[0.11]workedUnder(B,C),not director(A),[0.10]not director(C),[0.13]not actor(A),not actor(B),[0.92]not isFemale(B),not movie(D,C) )
+optimization finished !

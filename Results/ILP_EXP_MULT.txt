@@ -1,0 +1,472 @@
+PS D:\Dropbox\logic\code\ILPTasks\v5> & C:/Users/apaya/Anaconda3/envs/tensorflow/python.exe d:/Dropbox/logic/code/ILPTasks/v5/exp_list_multN3.py
+******************************************************************
+predicate [incN] parameters :
+Lx : 22
+Lx Details [4, 8, 2, 8]
+input index shape :  (49, 1, 22)
+******************************************************************
+******************************************************************
+predicate [addN] parameters :
+Lx : 66
+Lx Details [9, 27, 3, 27]
+input index shape :  (343, 1, 66)
+******************************************************************
+******************************************************************
+predicate [zeroN] parameters :
+Lx : 4
+Lx Details [1, 1, 1, 1]
+input index shape :  (7, 1, 4)
+******************************************************************
+******************************************************************
+predicate [mult] parameters :
+Lx : 144
+Lx Details [20, 60, 5, 59]
+input index shape :  (343, 49, 144)
+******************************************************************
+building background knowledge finished. elapsed: 0:00:09.926031
+displaying config setting...
+BETA1-0.9
+ITER2-200
+MAX_NEG_EX-0
+LR_SC-{(2, 100000.0): 0.001, (-1000, 2): 0.005}
+BETA2-0.999
+BINARAIZE-1
+W_DISP_TH-0.2
+PRINT_WEIGHTS-0
+BS-1
+TB-0
+LOGDIR-./logs/Logic
+L1-0.001
+ALLTIMESTAMP-0
+OPT_TH-0.05
+L2LOSS-0
+MAXTERMS-5
+CLIP_NORM-0
+ADDGRAPH-1
+FILT_TH_MEAN-4
+FILT_TH_MAX-0.2
+T-7
+DISP_BATCH_VALUES-[]
+ITER-400000
+MAX_POS_EX-0
+PRINTPRED-1
+PLOGENT-0.5
+L2-0.001
+L3-0
+USE_OR-1
+EPS-1e-06
+SEED-0
+MAX_DISP_ITEMS-200
+GPU-1
+Tensorflow Version :  1.12.0
+2019-02-19 23:55:44.800813: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2019-02-19 23:55:44.991807: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties:
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.607
+pciBusID: 0000:01:00.0
+totalMemory: 11.00GiB freeMemory: 9.10GiB
+2019-02-19 23:55:44.997531: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-02-19 23:55:45.693353: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-02-19 23:55:45.697021: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0
+2019-02-19 23:55:45.698810: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N
+2019-02-19 23:55:45.700689: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8788 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+input size for F (mult) = 16807
+summary all variables
+<tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref>
+<tf.Variable 'ILP/mult_OR:0' shape=(1, 6) dtype=float32_ref>
+building optimizer...
+building optimizer finished. elapsed: 0:00:01.231862
+***********************
+number of trainable parameters : 870
+***********************
+------------------------------------------------------------------
+epoch= 0 cost= 248.64758 elapsed :  0:00:06.579406 error OrderedDict([('mult', 27.0)])
+------------------------------------------------------------------
+epoch= 1 cost= 248.64758 elapsed :  0:00:10.550124 error OrderedDict([('mult', 27.0)])
+------------------------------------------------------------------
+epoch= 2 cost= 248.64758 elapsed :  0:00:10.509437 error OrderedDict([('mult', 27.0)])
+------------------------------------------------------------------
+epoch= 3 cost= 248.64758 elapsed :  0:00:10.517449 error OrderedDict([('mult', 27.0)])
+------------------------------------------------------------------
+epoch= 4 cost= 248.61475 elapsed :  0:00:10.508544 error OrderedDict([('mult', 26.999996)])
+mult(A,B,C)
+         :- [0.2] ([0.2]incN(E,C),[0.2]addN(A,C,B),[0.2]addN(B,C,D),[0.2]addN(B,D,C),[0.2]addN(C,B,D),[0.2]addN(C,B,E),[0.2]addN(C,D,B),[0.2]addN(C,E,A),[0.2]addN(E,B,D),[0.2]zeroN(C),[0.2]mult(A,B,D),[0.2]mult(A,B,E),[0.2]mult(B,C,D),[0.2]mult(B,E,C),[0.2]mult(C,A,E),[0.2]mult(C,B,D),[0.2]mult(C,B,E),[0.2]mult(C,E,D),[0.2]mult(D,A,C),[0.2]mult(D,A,E),[0.2]mult(E,A,C),[0.2]mult(E,B,C) )
+         :- [0.2] ([0.2]addN(B,E,A),[0.2]addN(C,E,A),[0.2]addN(E,D,B),[0.2]addN(E,D,C),[0.2]mult(B,C,A),[0.2]mult(B,C,E),[0.2]mult(B,D,C),[0.2]mult(D,E,A),[0.2]mult(E,A,B),[0.2]mult(E,A,C),[0.2]mult(E,B,D) )
+         :- [0.2] ([0.2]incN(A,E),[0.2]incN(B,D),[0.2]incN(D,B),[0.2]incN(D,C),[0.2]addN(A,C,B),[0.2]addN(A,E,C),[0.2]addN(B,C,A),[0.2]addN(B,C,D),[0.2]addN(C,B,D),[0.2]addN(C,B,E),[0.2]addN(C,E,D),[0.2]addN(D,C,E),[0.2]addN(D,E,A),[0.2]mult(A,E,C),[0.2]mult(B,C,D),[0.2]mult(B,C,E),[0.2]mult(B,D,E),[0.2]mult(C,B,E),[0.2]mult(C,E,B),[0.2]mult(D,E,B),[0.2]mult(E,C,A) )
+------------------------------------------------------------------
+epoch= 5 cost= 106.10847 elapsed :  0:00:10.528614 error OrderedDict([('mult', 33.04391)])
+mult(A,B,C)
+         :- [0.6] ( )
+         :- [0.6] ( )
+         :- [0.4] ( )
+         :- [0.6] ( )
+         :- [0.5] ( )
+         :- [0.5] ( )
+------------------------------------------------------------------
+epoch= 6 cost= 88.86898 elapsed :  0:00:10.518978 error OrderedDict([('mult', 48.797035)])
+mult(A,B,C)
+         :- [0.6] ( )
+         :- [0.7] ([0.2]zeroN(C) )
+         :- [0.4] ( )
+         :- [0.7] ( )
+         :- [0.5] ( )
+         :- [0.5] ( )
+------------------------------------------------------------------
+epoch= 7 cost= 85.07851 elapsed :  0:00:10.496277 error OrderedDict([('mult', 47.944416)])
+mult(A,B,C)
+         :- [0.7] ([0.4]zeroN(C) )
+         :- [0.7] ([0.4]zeroN(C) )
+         :- [0.4] ( )
+         :- [0.7] ( )
+         :- [0.5] ( )
+         :- [0.6] ( )
+------------------------------------------------------------------
+epoch= 8 cost= 80.11772 elapsed :  0:00:10.494631 error OrderedDict([('mult', 45.483955)])
+mult(A,B,C)
+         :- [0.8] ([0.3]zeroN(A),[0.6]zeroN(C) )
+         :- [0.8] ([0.2]zeroN(B),[0.6]zeroN(C) )
+         :- [0.4] ( )
+         :- [0.7] ([0.3]zeroN(C) )
+         :- [0.5] ([0.3]zeroN(C) )
+         :- [0.6] ([0.3]zeroN(C) )
+------------------------------------------------------------------
+epoch= 9 cost= 76.64058 elapsed :  0:00:10.523842 error OrderedDict([('mult', 42.87535)])
+mult(A,B,C)
+         :- [0.8] ([0.3]addN(A,B,D),[0.3]addN(B,A,D),[0.5]zeroN(A),[0.2]zeroN(B),[0.8]zeroN(C) )
+         :- [0.8] ([0.2]zeroN(A),[0.4]zeroN(B),[0.7]zeroN(C) )
+         :- [0.3] ( )
+         :- [0.7] ([0.3]zeroN(C) )
+         :- [0.6] ([0.5]zeroN(C) )
+         :- [0.7] ([0.5]zeroN(C) )
+------------------------------------------------------------------
+epoch= 10 cost= 72.0644 elapsed :  0:00:10.525468 error OrderedDict([('mult', 40.469063)])
+mult(A,B,C)
+         :- [0.9] ([0.5]addN(A,B,D),[0.6]addN(B,A,D),[0.6]zeroN(A),[0.2]zeroN(B),[0.9]zeroN(C) )
+         :- [0.8] ([0.2]addN(B,D,C),[0.2]zeroN(A),[0.5]zeroN(B),[0.8]zeroN(C) )
+         :- [0.2] ( )
+         :- [0.6] ([0.3]zeroN(C) )
+         :- [0.8] ([0.3]addN(B,D,C),[0.2]addN(B,E,C),[0.4]addN(D,B,C),[0.3]addN(E,B,C),[0.5]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.8] ([0.2]addN(A,E,C),[0.3]addN(B,D,C),[0.2]addN(B,E,C),[0.3]addN(D,B,C),[0.2]addN(E,B,C),[0.5]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+------------------------------------------------------------------
+epoch= 11 cost= 52.447895 elapsed :  0:00:10.518417 error OrderedDict([('mult', 29.80674)])
+mult(A,B,C)
+         :- [0.9] ([0.8]addN(A,B,D),[0.8]addN(B,A,D),[0.5]addN(B,C,D),[0.4]addN(C,B,D),[0.3]addN(C,D,B),[0.3]addN(D,C,B),[0.8]zeroN(A),[0.9]zeroN(C) )
+         :- [0.8] ([0.2]addN(B,A,D),[0.3]addN(B,D,C),[0.3]addN(B,E,C),[0.2]addN(C,D,B),[0.3]addN(D,B,C),[0.3]addN(E,B,C),[0.2]zeroN(A),[0.6]zeroN(B),[0.8]zeroN(C),[0.2]zeroN(D),[0.2]zeroN(E) )
+         :- [0.6] ([0.3]zeroN(C) )
+         :- [0.9] ([0.3]incN(D,A),[0.7]addN(B,D,C),[0.6]addN(B,E,C),[0.3]addN(C,D,B),[0.7]addN(D,B,C),[0.2]addN(D,C,B),[0.7]addN(E,B,C),[0.2]addN(E,C,B),[0.2]zeroN(C),[0.5]zeroN(D),[0.5]zeroN(E) )
+         :- [0.9] ([0.6]addN(B,D,C),[0.2]addN(B,D,E),[0.5]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,D,E),[0.3]addN(C,E,B),[0.3]addN(C,E,D),[0.5]addN(D,B,C),[0.4]addN(D,C,B),[0.3]addN(D,C,E),[0.3]addN(D,E,C),[0.5]addN(E,B,C),[0.2]addN(E,B,D),[0.2]addN(E,C,B),[0.2]addN(E,C,D),[0.3]addN(E,D,C),[0.6]zeroN(C),[0.6]zeroN(D),[0.5]zeroN(E) )
+------------------------------------------------------------------
+epoch= 12 cost= 36.982765 elapsed :  0:00:10.542432 error OrderedDict([('mult', 23.358698)])
+mult(A,B,C)
+         :- [0.9] ([0.8]addN(A,B,D),[0.9]addN(B,A,D),[0.6]addN(B,C,D),[0.6]addN(C,B,D),[0.5]addN(C,D,B),[0.5]addN(D,C,B),[0.9]zeroN(A),[0.9]zeroN(C) )
+         :- [0.8] ([0.2]addN(A,B,D),[0.2]addN(B,A,D),[0.4]addN(B,D,C),[0.3]addN(B,E,C),[0.2]addN(C,D,B),[0.3]addN(D,B,C),[0.2]addN(D,C,B),[0.3]addN(E,B,C),[0.3]zeroN(A),[0.6]zeroN(B),[0.8]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.6] ([0.4]zeroN(C) )
+         :- [0.9] ([0.6]incN(D,A),[0.5]incN(E,A),[0.8]addN(B,D,C),[0.8]addN(B,E,C),[0.9]addN(D,B,C),[0.3]addN(D,E,C),[0.9]addN(E,B,C),[0.2]addN(E,D,C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- ([0.6]addN(B,D,C),[0.3]addN(B,D,E),[0.5]addN(B,E,C),[0.3]addN(B,E,D),[0.4]addN(C,D,B),[0.3]addN(C,D,E),[0.3]addN(C,E,B),[0.4]addN(C,E,D),[0.6]addN(D,B,C),[0.3]addN(D,B,E),[0.4]addN(D,C,B),[0.4]addN(D,C,E),[0.4]addN(D,E,C),[0.6]addN(E,B,C),[0.3]addN(E,B,D),[0.3]addN(E,C,B),[0.4]addN(E,C,D),[0.4]addN(E,D,C),[0.8]zeroN(C),[0.6]zeroN(D),[0.6]zeroN(E) )
+------------------------------------------------------------------
+epoch= 13 cost= 28.729944 elapsed :  0:00:10.433538 error OrderedDict([('mult', 17.565262)])
+mult(A,B,C)
+         :- [0.9] ([0.9]addN(A,B,D),[0.9]addN(B,A,D),[0.7]addN(B,C,D),[0.6]addN(C,B,D),[0.6]addN(C,D,B),[0.6]addN(D,C,B),[0.9]zeroN(A),[0.9]zeroN(C) )
+         :- [0.8] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.4]addN(B,D,C),[0.3]addN(B,E,C),[0.3]addN(C,D,B),[0.3]addN(D,B,C),[0.2]addN(D,C,B),[0.3]addN(E,B,C),[0.3]zeroN(A),[0.7]zeroN(B),[0.8]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.6] ([0.4]zeroN(C) )
+         :- ([0.8]incN(D,A),[0.7]incN(E,A),[0.2]addN(B,D,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.2]addN(D,B,A),[0.9]addN(D,B,C),[0.9]addN(E,B,C),[0.2]zeroN(D),[0.2]zeroN(E) )
+         :- ([0.2]addN(B,C,D),[0.7]addN(B,D,C),[0.4]addN(B,D,E),[0.6]addN(B,E,C),[0.3]addN(B,E,D),[0.2]addN(C,B,D),[0.2]addN(C,B,E),[0.4]addN(C,D,B),[0.3]addN(C,D,E),[0.4]addN(C,E,B),[0.4]addN(C,E,D),[0.6]addN(D,B,C),[0.3]addN(D,B,E),[0.4]addN(D,C,B),[0.5]addN(D,C,E),[0.5]addN(D,E,C),[0.6]addN(E,B,C),[0.4]addN(E,B,D),[0.3]addN(E,C,B),[0.4]addN(E,C,D),[0.5]addN(E,D,C),[0.8]zeroN(C),[0.6]zeroN(D),[0.6]zeroN(E) )
+------------------------------------------------------------------
+epoch= 14 cost= 26.44481 elapsed :  0:00:10.459362 error OrderedDict([('mult', 14.989964)])
+mult(A,B,C)
+         :- [0.9] ([0.9]addN(A,B,D),[0.9]addN(B,A,D),[0.7]addN(B,C,D),[0.7]addN(C,B,D),[0.7]addN(C,D,B),[0.7]addN(D,C,B),[0.9]zeroN(A),[0.9]zeroN(C) )
+         :- [0.8] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.4]addN(B,D,C),[0.3]addN(B,E,C),[0.3]addN(C,D,B),[0.3]addN(D,B,C),[0.2]addN(D,C,B),[0.3]addN(E,B,C),[0.3]zeroN(A),[0.7]zeroN(B),[0.8]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.6] ([0.4]zeroN(C) )
+         :- ([0.8]incN(D,A),[0.2]incN(D,C),[0.8]incN(E,A),[0.2]addN(B,D,A),[0.9]addN(B,D,C),[0.2]addN(B,E,A),[0.9]addN(B,E,C),[0.2]addN(D,B,A),[0.9]addN(D,B,C),[0.2]addN(E,B,A),[0.9]addN(E,B,C),[0.2]zeroN(D),[0.2]zeroN(E) )
+         :- ([0.2]addN(B,C,D),[0.7]addN(B,D,C),[0.4]addN(B,D,E),[0.6]addN(B,E,C),[0.4]addN(B,E,D),[0.2]addN(C,B,D),[0.2]addN(C,B,E),[0.4]addN(C,D,B),[0.3]addN(C,D,E),[0.4]addN(C,E,B),[0.4]addN(C,E,D),[0.6]addN(D,B,C),[0.3]addN(D,B,E),[0.4]addN(D,C,B),[0.5]addN(D,C,E),[0.5]addN(D,E,C),[0.6]addN(E,B,C),[0.4]addN(E,B,D),[0.3]addN(E,C,B),[0.4]addN(E,C,D),[0.5]addN(E,D,C),[0.9]zeroN(C),[0.6]zeroN(D),[0.6]zeroN(E) )
+------------------------------------------------------------------
+epoch= 15 cost= 25.571615 elapsed :  0:00:10.531523 error OrderedDict([('mult', 13.814322)])
+mult(A,B,C)
+         :- [0.9] ([0.9]addN(A,B,D),[0.9]addN(B,A,D),[0.7]addN(B,C,D),[0.7]addN(C,B,D),[0.7]addN(C,D,B),[0.7]addN(D,C,B),[0.9]zeroN(A),[0.9]zeroN(C) )
+         :- [0.8] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.4]addN(B,D,C),[0.3]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.3]addN(D,B,C),[0.2]addN(D,C,B),[0.3]addN(E,B,C),[0.3]zeroN(A),[0.7]zeroN(B),[0.8]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.6] ([0.5]zeroN(C) )
+         :- ([0.8]incN(D,A),[0.2]incN(D,C),[0.8]incN(E,A),[0.2]incN(E,C),[0.2]addN(B,D,A),[0.9]addN(B,D,C),[0.2]addN(B,E,A),[0.9]addN(B,E,C),[0.2]addN(D,B,A),[0.9]addN(D,B,C),[0.2]addN(E,B,A),[0.9]addN(E,B,C),[0.3]zeroN(D),[0.2]zeroN(E) )
+         :- ([0.7]addN(B,D,C),[0.4]addN(B,D,E),[0.6]addN(B,E,C),[0.4]addN(B,E,D),[0.2]addN(C,B,D),[0.4]addN(C,D,B),[0.3]addN(C,D,E),[0.3]addN(C,E,B),[0.4]addN(C,E,D),[0.6]addN(D,B,C),[0.3]addN(D,B,E),[0.4]addN(D,C,B),[0.5]addN(D,C,E),[0.5]addN(D,E,C),[0.6]addN(E,B,C),[0.4]addN(E,B,D),[0.3]addN(E,C,B),[0.4]addN(E,C,D),[0.5]addN(E,D,C),[0.9]zeroN(C),[0.6]zeroN(D),[0.6]zeroN(E) )
+------------------------------------------------------------------
+epoch= 16 cost= 24.882555 elapsed :  0:00:10.521348 error OrderedDict([('mult', 13.025393)])
+mult(A,B,C)
+         :- [0.9] ([0.9]addN(A,B,D),[0.9]addN(B,A,D),[0.7]addN(B,C,D),[0.7]addN(C,B,D),[0.7]addN(C,D,B),[0.7]addN(D,C,B),[0.9]zeroN(A),[0.9]zeroN(C) )
+         :- [0.8] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.4]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.2]addN(D,C,B),[0.4]addN(E,B,C),[0.3]zeroN(A),[0.7]zeroN(B),[0.8]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.6] ([0.5]zeroN(C) )
+         :- ([0.9]incN(D,A),[0.2]incN(D,C),[0.8]incN(E,A),[0.2]addN(B,D,A),[0.9]addN(B,D,C),[0.2]addN(B,E,A),[0.9]addN(B,E,C),[0.2]addN(D,B,A),[0.9]addN(D,B,C),[0.9]addN(E,B,C),[0.2]zeroN(D),[0.2]zeroN(E),[0.3]mult(E,B,D) )
+         :- ([0.7]addN(B,D,C),[0.4]addN(B,D,E),[0.6]addN(B,E,C),[0.4]addN(B,E,D),[0.3]addN(C,D,B),[0.3]addN(C,D,E),[0.3]addN(C,E,B),[0.4]addN(C,E,D),[0.6]addN(D,B,C),[0.3]addN(D,B,E),[0.4]addN(D,C,B),[0.5]addN(D,C,E),[0.5]addN(D,E,C),[0.6]addN(E,B,C),[0.5]addN(E,B,D),[0.3]addN(E,C,B),[0.3]addN(E,C,D),[0.5]addN(E,D,C),[0.9]zeroN(C),[0.6]zeroN(D),[0.6]zeroN(E) )
+------------------------------------------------------------------
+epoch= 17 cost= 23.611507 elapsed :  0:00:10.537740 error OrderedDict([('mult', 12.1902075)])
+mult(A,B,C)
+         :- [0.9] ([0.9]addN(A,B,D),[0.9]addN(B,A,D),[0.8]addN(B,C,D),[0.7]addN(C,B,D),[0.8]addN(C,D,B),[0.8]addN(D,C,B),zeroN(A),[0.9]zeroN(C) )
+         :- [0.8] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.4]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.2]addN(D,C,B),[0.4]addN(E,B,C),[0.3]zeroN(A),[0.7]zeroN(B),[0.8]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.6] ([0.5]zeroN(C) )
+         :- ([0.9]incN(D,A),[0.2]incN(D,C),[0.8]incN(E,A),[0.2]addN(B,D,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.2]addN(D,B,A),[0.9]addN(D,B,C),[0.9]addN(E,B,C),[0.4]mult(D,B,E),[0.5]mult(E,B,D) )
+         :- ([0.7]addN(B,D,C),[0.4]addN(B,D,E),[0.7]addN(B,E,C),[0.5]addN(B,E,D),[0.3]addN(C,D,B),[0.2]addN(C,D,E),[0.3]addN(C,E,B),[0.4]addN(C,E,D),[0.6]addN(D,B,C),[0.3]addN(D,B,E),[0.4]addN(D,C,B),[0.4]addN(D,C,E),[0.5]addN(D,E,C),[0.7]addN(E,B,C),[0.5]addN(E,B,D),[0.2]addN(E,C,B),[0.3]addN(E,C,D),[0.5]addN(E,D,C),[0.9]zeroN(C),[0.6]zeroN(D),[0.6]zeroN(E) )
+------------------------------------------------------------------
+epoch= 18 cost= 20.67966 elapsed :  0:00:10.521955 error OrderedDict([('mult', 11.121683)])
+mult(A,B,C)
+         :- [0.9] ([0.9]addN(A,B,D),[0.9]addN(B,A,D),[0.8]addN(B,C,D),[0.7]addN(C,B,D),[0.8]addN(C,D,B),[0.8]addN(D,C,B),zeroN(A),[0.9]zeroN(C) )
+         :- [0.8] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.4]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.2]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.7]zeroN(B),[0.8]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.6] ([0.5]zeroN(C) )
+         :- ([0.9]incN(D,A),[0.9]incN(E,A),[0.2]addN(B,D,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.2]addN(D,B,A),[0.9]addN(D,B,C),[0.9]addN(E,B,C),[0.6]mult(D,B,E),[0.7]mult(E,B,D) )
+         :- ([0.7]addN(B,D,C),[0.5]addN(B,D,E),[0.7]addN(B,E,C),[0.5]addN(B,E,D),[0.3]addN(C,D,B),[0.3]addN(C,E,B),[0.3]addN(C,E,D),[0.7]addN(D,B,C),[0.3]addN(D,B,E),[0.4]addN(D,C,B),[0.4]addN(D,C,E),[0.5]addN(D,E,C),[0.7]addN(E,B,C),[0.6]addN(E,B,D),[0.2]addN(E,C,B),[0.3]addN(E,C,D),[0.5]addN(E,D,C),[0.9]zeroN(C),[0.6]zeroN(D),[0.6]zeroN(E) )
+------------------------------------------------------------------
+epoch= 19 cost= 18.026846 elapsed :  0:00:10.515341 error OrderedDict([('mult', 10.131289)])
+mult(A,B,C)
+         :- [0.9] ([0.9]addN(A,B,D),[0.9]addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.8]addN(C,D,B),[0.8]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.7] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.4]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.2]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.7]zeroN(B),[0.8]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.6] ([0.5]zeroN(C) )
+         :- ([0.9]incN(D,A),[0.9]incN(E,A),[0.2]addN(B,D,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.2]addN(D,B,A),[0.9]addN(D,B,C),[0.9]addN(E,B,C),[0.6]mult(D,B,E),[0.8]mult(E,B,D) )
+         :- ([0.8]addN(B,D,C),[0.5]addN(B,D,E),[0.7]addN(B,E,C),[0.5]addN(B,E,D),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.3]addN(C,E,D),[0.7]addN(D,B,C),[0.3]addN(D,B,E),[0.4]addN(D,C,B),[0.4]addN(D,C,E),[0.5]addN(D,E,C),[0.7]addN(E,B,C),[0.6]addN(E,B,D),[0.2]addN(E,C,D),[0.5]addN(E,D,C),zeroN(C),[0.6]zeroN(D),[0.6]zeroN(E) )
+------------------------------------------------------------------
+epoch= 20 cost= 15.603827 elapsed :  0:00:10.508340 error OrderedDict([('mult', 9.07901)])
+mult(A,B,C)
+         :- [0.9] ([0.9]addN(A,B,D),[0.9]addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.8]addN(C,D,B),[0.8]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.7] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.5]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.2]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.7]zeroN(B),[0.8]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.5] ([0.5]zeroN(C) )
+         :- ([0.9]incN(D,A),[0.9]incN(E,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.2]addN(D,B,A),[0.9]addN(D,B,C),[0.9]addN(E,B,C),[0.4]mult(D,B,E),[0.9]mult(E,B,D) )
+         :- ([0.8]addN(B,D,C),[0.5]addN(B,D,E),[0.7]addN(B,E,C),[0.5]addN(B,E,D),[0.2]addN(C,D,B),[0.2]addN(C,E,B),[0.3]addN(C,E,D),[0.7]addN(D,B,C),[0.2]addN(D,B,E),[0.3]addN(D,C,B),[0.4]addN(D,C,E),[0.5]addN(D,E,C),[0.7]addN(E,B,C),[0.7]addN(E,B,D),[0.5]addN(E,D,C),zeroN(C),[0.6]zeroN(D),[0.6]zeroN(E) )
+------------------------------------------------------------------
+epoch= 21 cost= 13.875672 elapsed :  0:00:10.504945 error OrderedDict([('mult', 8.1733675)])
+mult(A,B,C)
+         :- [0.9] ([0.9]addN(A,B,D),[0.9]addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.8]addN(C,D,B),[0.8]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.7] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.5]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.2]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.7]zeroN(B),[0.8]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.5] ([0.5]zeroN(C) )
+         :- ([0.9]incN(D,A),[0.9]incN(E,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.9]addN(D,B,C),[0.9]addN(E,B,C),[0.3]mult(D,B,E),mult(E,B,D) )
+         :- ([0.8]addN(B,D,C),[0.4]addN(B,D,E),[0.7]addN(B,E,C),[0.4]addN(B,E,D),[0.2]addN(C,D,B),[0.2]addN(C,E,D),[0.7]addN(D,B,C),[0.3]addN(D,C,B),[0.4]addN(D,C,E),[0.5]addN(D,E,C),[0.8]addN(E,B,C),[0.8]addN(E,B,D),[0.5]addN(E,D,C),zeroN(C),[0.6]zeroN(D),[0.5]zeroN(E) )
+------------------------------------------------------------------
+epoch= 22 cost= 12.766319 elapsed :  0:00:10.512908 error OrderedDict([('mult', 7.5269833)])
+mult(A,B,C)
+         :- [0.9] ([0.9]addN(A,B,D),[0.9]addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.7] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.5]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.2]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.7]zeroN(B),[0.8]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.3] ([0.8]incN(A,B),[0.8]incN(B,A),[0.9]incN(B,E),[0.4]addN(A,B,C),addN(A,E,C),[0.5]addN(B,A,C),[0.6]addN(B,E,C),addN(E,A,C),[0.4]addN(E,B,C) )
+         :- [0.5] ([0.6]zeroN(C) )
+         :- (incN(D,A),[0.9]incN(E,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.9]addN(D,B,C),[0.9]addN(E,B,C),mult(E,B,D) )
+         :- ([0.8]addN(B,D,C),[0.4]addN(B,D,E),[0.8]addN(B,E,C),[0.3]addN(B,E,D),[0.7]addN(D,B,C),[0.3]addN(D,C,B),[0.4]addN(D,C,E),[0.5]addN(D,E,C),[0.8]addN(E,B,C),[0.8]addN(E,B,D),[0.5]addN(E,D,C),zeroN(C),[0.6]zeroN(D),[0.5]zeroN(E) )
+------------------------------------------------------------------
+epoch= 23 cost= 12.052735 elapsed :  0:00:10.498555 error OrderedDict([('mult', 7.082476)])
+mult(A,B,C)
+         :- [0.9] ([0.9]addN(A,B,D),[0.9]addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.7] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.5]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.2]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.8]zeroN(B),[0.9]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.4] ([0.8]incN(A,B),[0.8]incN(B,A),[0.9]incN(B,E),[0.5]addN(A,B,C),addN(A,E,C),[0.6]addN(B,A,C),[0.6]addN(B,E,C),addN(E,A,C),[0.3]addN(E,B,C) )
+         :- [0.5] ([0.6]zeroN(C) )
+         :- (incN(D,A),incN(E,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.9]addN(D,B,C),[0.9]addN(E,B,C),mult(E,B,D) )
+         :- ([0.8]addN(B,D,C),[0.3]addN(B,D,E),[0.8]addN(B,E,C),[0.2]addN(B,E,D),[0.7]addN(D,B,C),[0.3]addN(D,C,B),[0.4]addN(D,C,E),[0.5]addN(D,E,C),[0.8]addN(E,B,C),[0.9]addN(E,B,D),[0.6]addN(E,D,C),zeroN(C),[0.6]zeroN(D),[0.5]zeroN(E) )
+------------------------------------------------------------------
+epoch= 24 cost= 11.563949 elapsed :  0:00:10.508976 error OrderedDict([('mult', 6.7573705)])
+mult(A,B,C)
+         :- [0.9] (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.7] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.5]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.3]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.8]zeroN(B),[0.9]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.4] ([0.8]incN(A,B),[0.8]incN(B,A),[0.9]incN(B,E),[0.5]addN(A,B,C),addN(A,E,C),[0.6]addN(B,A,C),[0.6]addN(B,E,C),addN(E,A,C),[0.3]addN(E,B,C) )
+         :- [0.5] ([0.6]zeroN(C) )
+         :- (incN(D,A),incN(E,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.9]addN(D,B,C),[0.9]addN(E,B,C),mult(E,B,D) )
+         :- ([0.8]addN(B,D,C),[0.2]addN(B,D,E),[0.8]addN(B,E,C),[0.7]addN(D,B,C),[0.2]addN(D,C,B),[0.3]addN(D,C,E),[0.5]addN(D,E,C),[0.8]addN(E,B,C),[0.9]addN(E,B,D),[0.6]addN(E,D,C),zeroN(C),[0.6]zeroN(D),[0.4]zeroN(E) )
+------------------------------------------------------------------
+epoch= 25 cost= 11.21286 elapsed :  0:00:10.512997 error OrderedDict([('mult', 6.5116186)])
+mult(A,B,C)
+         :- [0.9] (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.7] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.5]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.3]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.8]zeroN(B),[0.9]zeroN(C),[0.3]zeroN(D),[0.3]zeroN(E) )
+         :- [0.5] ([0.8]incN(A,B),[0.8]incN(B,A),incN(B,E),[0.5]addN(A,B,C),addN(A,E,C),[0.7]addN(B,A,C),[0.7]addN(B,E,C),addN(E,A,C),[0.3]addN(E,B,C) )
+         :- [0.5] ([0.6]zeroN(C) )
+         :- (incN(D,A),incN(E,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.9]addN(D,B,C),[0.9]addN(E,B,C),mult(E,B,D) )
+         :- ([0.9]addN(B,D,C),[0.8]addN(B,E,C),[0.8]addN(D,B,C),[0.2]addN(D,C,E),[0.4]addN(D,E,C),[0.8]addN(E,B,C),addN(E,B,D),[0.6]addN(E,D,C),zeroN(C),[0.6]zeroN(D),[0.4]zeroN(E) )
+------------------------------------------------------------------
+epoch= 26 cost= 10.945497 elapsed :  0:00:10.518073 error OrderedDict([('mult', 6.3164167)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.7] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.5]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.3]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.8]zeroN(B),[0.9]zeroN(C),[0.3]zeroN(D),[0.2]zeroN(E) )
+         :- [0.6] ([0.8]incN(A,B),[0.8]incN(B,A),incN(B,E),[0.5]addN(A,B,C),addN(A,E,C),[0.7]addN(B,A,C),[0.7]addN(B,E,C),addN(E,A,C),[0.2]addN(E,B,C) )
+         :- [0.5] ([0.6]zeroN(C) )
+         :- (incN(D,A),incN(E,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.9]addN(D,B,C),[0.9]addN(E,B,C),mult(E,B,D) )
+         :- ([0.9]addN(B,D,C),[0.8]addN(B,E,C),[0.8]addN(D,B,C),[0.4]addN(D,E,C),[0.8]addN(E,B,C),addN(E,B,D),[0.7]addN(E,D,C),zeroN(C),[0.6]zeroN(D),[0.3]zeroN(E) )
+------------------------------------------------------------------
+epoch= 27 cost= 10.732592 elapsed :  0:00:10.522508 error OrderedDict([('mult', 6.155381)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.6] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.6]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.3]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.8]zeroN(B),[0.9]zeroN(C),[0.3]zeroN(D),[0.2]zeroN(E) )
+         :- [0.7] ([0.8]incN(A,B),[0.8]incN(B,A),incN(B,E),[0.5]addN(A,B,C),addN(A,E,C),[0.7]addN(B,A,C),[0.7]addN(B,E,C),addN(E,A,C) )
+         :- [0.5] ([0.7]zeroN(C) )
+         :- (incN(D,A),incN(E,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.9]addN(D,B,C),[0.9]addN(E,B,C),mult(E,B,D) )
+         :- ([0.9]addN(B,D,C),[0.8]addN(B,E,C),[0.8]addN(D,B,C),[0.3]addN(D,E,C),[0.9]addN(E,B,C),addN(E,B,D),[0.7]addN(E,D,C),zeroN(C),[0.7]zeroN(D),[0.3]zeroN(E) )
+------------------------------------------------------------------
+epoch= 28 cost= 10.5560465 elapsed :  0:00:10.507167 error OrderedDict([('mult', 6.018057)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.6] ([0.2]addN(A,B,D),[0.3]addN(B,A,D),[0.6]addN(B,D,C),[0.4]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.3]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.8]zeroN(B),[0.9]zeroN(C),[0.3]zeroN(D),[0.2]zeroN(E) )
+         :- [0.7] ([0.8]incN(A,B),[0.8]incN(B,A),incN(B,E),[0.5]addN(A,B,C),addN(A,E,C),[0.8]addN(B,A,C),[0.7]addN(B,E,C),addN(E,A,C) )
+         :- [0.4] ([0.7]zeroN(C) )
+         :- (incN(D,A),incN(E,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.9]addN(D,B,C),[0.9]addN(E,B,C),mult(E,B,D) )
+         :- ([0.9]addN(B,D,C),[0.8]addN(B,E,C),[0.8]addN(D,B,C),[0.2]addN(D,E,C),[0.9]addN(E,B,C),addN(E,B,D),[0.8]addN(E,D,C),zeroN(C),[0.7]zeroN(D),[0.2]zeroN(E) )
+------------------------------------------------------------------
+epoch= 29 cost= 10.408333 elapsed :  0:00:10.519760 error OrderedDict([('mult', 5.9013405)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.6] ([0.3]addN(B,A,D),[0.6]addN(B,D,C),[0.5]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.3]addN(D,C,B),[0.4]addN(E,B,C),[0.2]addN(E,C,B),[0.3]zeroN(A),[0.9]zeroN(B),[0.9]zeroN(C),[0.3]zeroN(D),[0.2]zeroN(E) )
+         :- [0.8] ([0.8]incN(A,B),[0.8]incN(B,A),incN(B,E),[0.4]addN(A,B,C),addN(A,E,C),[0.8]addN(B,A,C),[0.7]addN(B,E,C),addN(E,A,C) )
+         :- [0.4] ([0.7]zeroN(C) )
+         :- (incN(D,A),incN(E,A),[0.9]addN(B,D,C),[0.9]addN(B,E,C),[0.9]addN(D,B,C),[0.9]addN(E,B,C),mult(E,B,D) )
+         :- ([0.9]addN(B,D,C),[0.8]addN(B,E,C),[0.7]addN(D,B,C),[0.9]addN(E,B,C),addN(E,B,D),[0.9]addN(E,D,C),zeroN(C),[0.6]zeroN(D) )
+------------------------------------------------------------------
+epoch= 30 cost= 10.282967 elapsed :  0:00:10.499922 error OrderedDict([('mult', 5.801205)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.5] ([0.3]addN(B,A,D),[0.6]addN(B,D,C),[0.5]addN(B,E,C),[0.3]addN(C,D,B),[0.2]addN(C,E,B),[0.4]addN(D,B,C),[0.3]addN(D,C,B),[0.5]addN(E,B,C),[0.2]addN(E,C,B),[0.2]zeroN(A),[0.9]zeroN(B),[0.9]zeroN(C),[0.3]zeroN(D),[0.2]zeroN(E) )
+         :- [0.8] ([0.8]incN(A,B),[0.8]incN(B,A),incN(B,E),[0.3]addN(A,B,C),addN(A,E,C),[0.8]addN(B,A,C),[0.7]addN(B,E,C),addN(E,A,C) )
+         :- [0.4] ([0.7]zeroN(C) )
+         :- (incN(D,A),incN(E,A),[0.9]addN(B,D,C),[0.8]addN(B,E,C),addN(D,B,C),[0.9]addN(E,B,C),mult(E,B,D) )
+         :- ([0.9]addN(B,D,C),[0.8]addN(B,E,C),[0.7]addN(D,B,C),[0.9]addN(E,B,C),addN(E,B,D),[0.9]addN(E,D,C),zeroN(C),[0.6]zeroN(D) )
+------------------------------------------------------------------
+epoch= 31 cost= 10.174049 elapsed :  0:00:10.522858 error OrderedDict([('mult', 5.7129498)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.5] ([0.3]addN(B,A,D),[0.7]addN(B,D,C),[0.5]addN(B,E,C),[0.4]addN(C,D,B),[0.4]addN(D,B,C),[0.3]addN(D,C,B),[0.5]addN(E,B,C),[0.2]zeroN(A),[0.9]zeroN(B),[0.9]zeroN(C),[0.3]zeroN(D) )
+         :- [0.8] ([0.8]incN(A,B),[0.8]incN(B,A),incN(B,E),[0.3]addN(A,B,C),addN(A,E,C),[0.9]addN(B,A,C),[0.8]addN(B,E,C),addN(E,A,C) )
+         :- [0.4] ([0.8]zeroN(C) )
+         :- (incN(D,A),incN(E,A),[0.9]addN(B,D,C),[0.8]addN(B,E,C),addN(D,B,C),[0.9]addN(E,B,C),mult(E,B,D) )
+         :- ([0.9]addN(B,D,C),[0.7]addN(B,E,C),[0.7]addN(D,B,C),[0.9]addN(E,B,C),addN(E,B,D),[0.9]addN(E,D,C),zeroN(C),[0.5]zeroN(D) )
+------------------------------------------------------------------
+epoch= 32 cost= 10.078892 elapsed :  0:00:10.528771 error OrderedDict([('mult', 5.6345725)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.4] ([0.3]addN(B,A,D),[0.7]addN(B,D,C),[0.5]addN(B,E,C),[0.4]addN(C,D,B),[0.4]addN(D,B,C),[0.2]addN(D,C,B),[0.5]addN(E,B,C),[0.2]zeroN(A),[0.9]zeroN(B),[0.9]zeroN(C),[0.3]zeroN(D) )
+         :- [0.8] ([0.8]incN(A,B),[0.8]incN(B,A),incN(B,E),addN(A,E,C),[0.9]addN(B,A,C),[0.8]addN(B,E,C),addN(E,A,C) )
+         :- [0.3] ([0.8]zeroN(C) )
+         :- (incN(D,A),incN(E,A),[0.9]addN(B,D,C),[0.8]addN(B,E,C),addN(D,B,C),[0.9]addN(E,B,C),mult(E,B,D) )
+         :- ([0.9]addN(B,D,C),[0.7]addN(B,E,C),[0.6]addN(D,B,C),[0.9]addN(E,B,C),addN(E,B,D),addN(E,D,C),zeroN(C),[0.4]zeroN(D) )
+------------------------------------------------------------------
+epoch= 33 cost= 9.991005 elapsed :  0:00:10.530563 error OrderedDict([('mult', 5.5596576)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.4] ([0.2]addN(B,A,D),[0.7]addN(B,D,C),[0.5]addN(B,E,C),[0.4]addN(C,D,B),[0.3]addN(D,B,C),[0.2]addN(D,C,B),[0.5]addN(E,B,C),[0.2]zeroN(A),[0.9]zeroN(B),[0.9]zeroN(C),[0.3]zeroN(D) )
+         :- [0.9] ([0.8]incN(A,B),[0.8]incN(B,A),incN(B,E),addN(A,E,C),[0.9]addN(B,A,C),[0.8]addN(B,E,C),addN(E,A,C) )
+         :- [0.3] ([0.8]zeroN(C) )
+         :- (incN(D,A),incN(E,A),addN(B,D,C),[0.8]addN(B,E,C),addN(D,B,C),[0.8]addN(E,B,C),mult(E,B,D) )
+         :- (addN(B,D,C),[0.6]addN(B,E,C),[0.5]addN(D,B,C),[0.9]addN(E,B,C),addN(E,B,D),addN(E,D,C),zeroN(C),[0.3]zeroN(D) )
+------------------------------------------------------------------
+epoch= 34 cost= 9.892876 elapsed :  0:00:10.518065 error OrderedDict([('mult', 5.4696198)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.3] ([0.2]addN(B,A,D),[0.8]addN(B,D,C),[0.5]addN(B,E,C),[0.4]addN(C,D,B),[0.3]addN(D,B,C),[0.2]addN(D,C,B),[0.4]addN(E,B,C),[0.9]zeroN(B),[0.9]zeroN(C),[0.2]zeroN(D) )
+         :- [0.9] ([0.8]incN(A,B),[0.8]incN(B,A),incN(B,E),addN(A,E,C),[0.9]addN(B,A,C),[0.8]addN(B,E,C),addN(E,A,C) )
+         :- [0.3] ([0.9]zeroN(C) )
+         :- (incN(D,A),incN(E,A),addN(B,D,C),[0.7]addN(B,E,C),addN(D,B,C),[0.8]addN(E,B,C),mult(E,B,D) )
+         :- (addN(B,D,C),[0.5]addN(B,E,C),[0.4]addN(D,B,C),[0.9]addN(E,B,C),addN(E,B,D),addN(E,D,C),zeroN(C),[0.2]zeroN(D) )
+------------------------------------------------------------------
+epoch= 35 cost= 9.489687 elapsed :  0:00:10.520919 error OrderedDict([('mult', 5.1137357)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.2] ([0.8]addN(B,D,C),[0.5]addN(B,E,C),[0.5]addN(C,D,B),[0.2]addN(D,B,C),[0.2]addN(D,C,B),[0.4]addN(E,B,C),zeroN(B),[0.9]zeroN(C),[0.2]zeroN(D) )
+         :- [0.9] ([0.9]incN(A,B),[0.9]incN(B,A),incN(B,E),addN(A,E,C),[0.8]addN(B,A,C),[0.7]addN(B,E,C),addN(E,A,C) )
+         :- [0.2] ([0.9]zeroN(C) )
+         :- (incN(D,A),incN(E,A),addN(B,D,C),[0.5]addN(B,E,C),addN(D,B,C),[0.6]addN(E,B,C),mult(E,B,D) )
+         :- (addN(B,D,C),[0.3]addN(B,E,C),[0.3]addN(D,B,C),[0.9]addN(E,B,C),addN(E,B,D),addN(E,D,C),zeroN(C) )
+------------------------------------------------------------------
+epoch= 36 cost= 6.935602 elapsed :  0:00:10.497312 error OrderedDict([('mult', 4.3692555)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.8]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.9] (incN(A,B),incN(B,A),incN(B,E),addN(A,E,C),[0.6]addN(B,A,C),[0.5]addN(B,E,C),addN(E,A,C) )
+         :- [0.2] ([0.9]zeroN(C) )
+         :- ([0.9]incN(D,A),incN(E,A),addN(B,D,C),[0.2]addN(B,E,C),addN(D,B,C),[0.3]addN(E,B,C),mult(E,B,D) )
+         :- (addN(B,D,C),[0.3]addN(B,E,C),[0.2]addN(D,B,C),[0.9]addN(E,B,C),addN(E,B,D),addN(E,D,C),zeroN(C) )
+------------------------------------------------------------------
+epoch= 37 cost= 5.3308234 elapsed :  0:00:10.512152 error OrderedDict([('mult', 3.7188296)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.7]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.9] (incN(A,B),incN(B,A),incN(B,E),addN(A,E,C),[0.6]addN(B,A,C),[0.5]addN(B,E,C),addN(E,A,C) )
+         :- ([0.9]incN(D,A),incN(E,A),addN(B,D,C),addN(D,B,C),[0.2]addN(E,B,C),mult(E,B,D) )
+         :- (addN(B,D,C),[0.9]addN(E,B,C),addN(E,B,D),addN(E,D,C),zeroN(C) )
+------------------------------------------------------------------
+epoch= 38 cost= 3.3533468 elapsed :  0:00:10.524592 error OrderedDict([('mult', 2.5418158)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.7]addN(C,B,D),[0.9]addN(C,D,B),[0.9]addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.9] (incN(A,B),incN(B,A),incN(B,E),addN(A,E,C),[0.8]addN(B,A,C),[0.8]addN(B,E,C),addN(E,A,C) )
+         :- ([0.8]incN(D,A),incN(E,A),addN(B,D,C),addN(D,B,C),mult(E,B,D) )
+         :- (addN(B,D,C),addN(E,B,C),addN(E,B,D),addN(E,D,C),zeroN(C) )
+------------------------------------------------------------------
+epoch= 39 cost= 1.5294133 elapsed :  0:00:10.518096 error OrderedDict([('mult', 1.4216428)])
+mult(A,B,C)
+         :- (addN(A,B,D),addN(B,A,D),[0.8]addN(B,C,D),[0.7]addN(C,B,D),addN(C,D,B),addN(D,C,B),zeroN(A),zeroN(C) )
+         :- [0.9] (incN(A,B),incN(B,A),incN(B,E),addN(A,E,C),[0.9]addN(B,A,C),[0.9]addN(B,E,C),addN(E,A,C) )
+         :- ([0.6]incN(D,A),incN(E,A),addN(B,D,C),addN(D,B,C),mult(E,B,D) )
+         :- (addN(B,D,C),addN(E,B,C),addN(E,B,D),addN(E,D,C),zeroN(C) )
+------------------------------------------------------------------
+epoch= 40 cost= 0.45699814 elapsed :  0:00:10.520269 error OrderedDict([('mult', 0.4829182)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/mult_OR:0' shape=(1, 6) dtype=float32_ref> (0, 2)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (0, 21)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (0, 36)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (1, 39)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (2, 0)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (2, 4)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (2, 7)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (2, 30)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (2, 32)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (2, 42)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (2, 69)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (3, 82)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (5, 39)
+weights in ILP/mult_AND:0 are not converged yet :  3.000000
+mult(A,B,C)
+         :- (addN(B,A,D),[0.4]addN(C,B,D),addN(C,D,B),addN(D,C,B),zeroN(A),zeroN(C) )
+         :- ([0.3]incN(D,A),incN(E,A),addN(B,D,C),addN(D,B,C),mult(E,B,D) )
+         :- (addN(E,B,C),addN(E,B,D),addN(E,D,C),zeroN(C) )
+------------------------------------------------------------------
+epoch= 41 cost= 2.4112809 elapsed :  0:00:14.042185 error OrderedDict([('mult', 2.4251354)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (0, 51)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (1, 51)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (4, 39)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (5, 72)
+weights in ILP/mult_AND:0 are not converged yet :  2.000000
+mult(A,B,C)
+         :- (addN(B,A,D),[0.3]addN(C,B,D),addN(D,C,B),zeroN(A),zeroN(C) )
+         :- ([0.4]incN(D,A),incN(E,A),addN(D,B,C),mult(E,B,D) )
+         :- (addN(E,B,D),addN(E,D,C),zeroN(C) )
+------------------------------------------------------------------
+epoch= 42 cost= 2.449081 elapsed :  0:00:12.845610 error OrderedDict([('mult', 2.4639895)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (0, 33)
+weights in ILP/mult_AND:0 are not converged yet :  2.000000
+mult(A,B,C)
+         :- (addN(D,C,B),zeroN(A),zeroN(C) )
+         :- ([0.4]incN(D,A),incN(E,A),addN(D,B,C),mult(E,B,D) )
+         :- (addN(E,B,D),addN(E,D,C),zeroN(C) )
+------------------------------------------------------------------
+epoch= 43 cost= 0.05228528 elapsed :  0:00:12.467659 error OrderedDict([('mult', 0.08518994)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (0, 63)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (1, 81)
+removing <tf.Variable 'ILP/mult_AND:0' shape=(6, 144) dtype=float32_ref> (1, 82)
+weights in ILP/mult_AND:0 are not converged yet :  1.000000
+mult(A,B,C)
+         :- (zeroN(A),zeroN(C) )
+         :- ([0.3]incN(D,A),incN(E,A),addN(D,B,C),mult(E,B,D) )
+         :- (addN(E,B,D),addN(E,D,C),zeroN(C) )
+weights in ILP/mult_AND:0 are not converged yet :  1.000000
+------------------------------------------------------------------
+epoch= 44 cost= -0.009793479 elapsed :  0:00:12.438509 error OrderedDict([('mult', 0.024321258)])
+start removing non necessary clauses
+weights in ILP/mult_AND:0 are not converged yet :  1.000000
+mult(A,B,C)
+         :- (zeroN(A),zeroN(C) )
+         :- ([0.2]incN(D,A),incN(E,A),addN(D,B,C),mult(E,B,D) )
+         :- (addN(E,B,D),addN(E,D,C),zeroN(C) )
+weights in ILP/mult_AND:0 are not converged yet :  1.000000
+------------------------------------------------------------------
+epoch= 45 cost= -0.029586917 elapsed :  0:00:12.134353 error OrderedDict([('mult', 0.004709542)])
+start removing non necessary clauses
+weights in ILP/mult_AND:0 are not converged yet :  1.000000
+mult(A,B,C)
+         :- (zeroN(A),zeroN(C) )
+         :- (incN(E,A),addN(D,B,C),mult(E,B,D) )
+         :- (addN(E,B,D),addN(E,D,C),zeroN(C) )
+weights in ILP/mult_AND:0 are not converged yet :  1.000000
+------------------------------------------------------------------
+epoch= 46 cost= -0.03403635 elapsed :  0:00:12.137415 error OrderedDict([('mult', 0.00026762486)])
+start removing non necessary clauses
+mult(A,B,C)
+         :- (zeroN(A),zeroN(C) )
+         :- (incN(E,A),addN(D,B,C),mult(E,B,D) )
+         :- (addN(E,B,D),addN(E,D,C),zeroN(C) )
+optimization finished !
+PS D:\Dropbox\logic\code\ILPTasks\v5>

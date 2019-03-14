@@ -1,0 +1,368 @@
+******************************************************************
+predicate [edge] parameters :
+Lx : 10
+Lx Details [4, 4, 2]
+input index shape :  (121, 1, 10)
+******************************************************************
+******************************************************************
+predicate [aux] parameters :
+Lx : 18
+Lx Details [9, 9, 0]
+input index shape :  (121, 11, 18)
+******************************************************************
+******************************************************************
+predicate [circular] parameters :
+Lx : 10
+Lx Details [4, 4, 2]
+input index shape :  (11, 11, 10)
+******************************************************************
+building background knowledge finished. elapsed: 0:00:00.053829
+displaying config setting...
+DISP_BATCH_VALUES-[]
+BETA1-0.9
+T-5
+L2LOSS-0
+BINARAIZE-1
+BS-1
+L3-0
+FILT_TH_MAX-0.5
+ALLTIMESTAMP-0
+ADDGRAPH-1
+GPU-1
+BETA2-0.999
+OPT_TH-0.05
+USE_OR-1
+L2-0
+W_DISP_TH-0.2
+SEED-0
+PRINT_WEIGHTS-0
+PLOGENT-0.5
+TB-0
+LR_SC-{(2, 100000.0): 0.0005, (-1000, 2): 0.005}
+FILT_TH_MEAN-0.5
+MAX_DISP_ITEMS-50
+CLIP_NORM-0
+MAXTERMS-6
+L1-0
+ITER-400000
+LR-0.003
+FILT_TH-0.5
+ITER2-200
+PRINTPRED-1
+N2-1
+EPS-1e-06
+SIG-2
+LOGDIR-./logs/Logic
+N1-1
+Tensorflow Version :  1.12.0
+2019-02-17 14:51:58.885796: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2019-02-17 14:51:59.076364: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties:
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.607
+pciBusID: 0000:01:00.0
+totalMemory: 11.00GiB freeMemory: 9.10GiB
+2019-02-17 14:51:59.084306: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-02-17 14:51:59.799363: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-02-17 14:51:59.804154: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0
+2019-02-17 14:51:59.808872: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N
+2019-02-17 14:51:59.813196: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8788 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+input size for F (aux) = 1331
+parition sizes [1331]
+input size for F (circular) = 121
+parition sizes [121]
+parition sizes [1331]
+parition sizes [121]
+parition sizes [1331]
+parition sizes [121]
+parition sizes [1331]
+parition sizes [121]
+parition sizes [1331]
+parition sizes [121]
+summary all variables
+<tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref>
+<tf.Variable 'ILP/aux_OR:0' shape=(1, 10) dtype=float32_ref>
+<tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref>
+<tf.Variable 'ILP/circular_OR:0' shape=(1, 4) dtype=float32_ref>
+building optimizer...
+building optimizer finished. elapsed: 0:00:01.670379
+***********************
+number of trainable parameters : 234
+***********************
+------------------------------------------------------------------
+epoch= 0 cost= 6.8937674 elapsed :  0:00:00.962775 error OrderedDict([('circular', 5.0973935)])
+aux(A,B)
+         :- [0.4] ([0.6]edge(B,A),[0.7]edge(C,C),[0.5]aux(B,B),[0.8]aux(C,A) )
+         :- [0.5] ([0.3]edge(A,A),[0.5]edge(A,C),[0.4]edge(C,A),[0.3]edge(C,B),[0.3]aux(A,A),[0.5]aux(A,B),[0.8]aux(A,C),[0.7]aux(C,A) )
+         :- [0.4] ([0.8]edge(A,C),[0.3]edge(C,A),[0.5]edge(C,B),[0.3]aux(A,A),[0.5]aux(A,C),[0.3]aux(C,C) )
+         :- [0.5] ([0.3]edge(A,A),[0.4]edge(B,B),[0.4]edge(C,A),[0.3]edge(C,C) )
+         :- [0.6] ([0.8]edge(B,C),[0.5]edge(C,B),[0.2]aux(A,C),[0.4]aux(C,B),[0.2]aux(C,C) )
+         :- [0.3] ([0.3]edge(A,B),[0.3]edge(C,B),[0.5]aux(C,C) )
+         :- [0.2] ([0.7]edge(A,A),[0.8]edge(B,C),[0.5]edge(C,A),[0.2]aux(C,A),[0.4]aux(C,C) )
+circular(A)
+         :- [0.5] ([0.8]edge(A,B),[0.4]edge(B,A),[0.3]aux(A,A),[0.3]aux(B,B),[0.5]circular(B) )
+------------------------------------------------------------------
+epoch= 1 cost= 6.707827 elapsed :  0:00:01.807205 error OrderedDict([('circular', 4.9971457)])
+aux(A,B)
+         :- [0.4] ([0.7]edge(B,A),[0.2]edge(C,B),[0.8]edge(C,C),[0.6]aux(B,B),[0.2]aux(B,C),[0.8]aux(C,A) )
+         :- [0.4] ([0.3]edge(A,A),[0.6]edge(A,C),[0.4]edge(C,A),[0.4]edge(C,B),[0.4]aux(A,A),[0.5]aux(A,B),[0.8]aux(A,C),[0.8]aux(C,A) )
+         :- [0.5] ([0.9]edge(A,C),[0.3]edge(C,A),[0.6]edge(C,B),[0.3]aux(A,A),[0.5]aux(A,C),[0.3]aux(C,C) )
+         :- [0.5] ([0.4]edge(A,A),[0.4]edge(B,B),[0.5]edge(C,A),[0.3]edge(C,C) )
+         :- [0.7] ([0.9]edge(B,C),[0.6]edge(C,B),[0.2]aux(A,C),[0.4]aux(C,B) )
+         :- [0.3] ([0.3]edge(A,B),[0.2]edge(A,C),[0.2]edge(B,B),[0.3]edge(C,B),[0.2]aux(C,B),[0.5]aux(C,C) )
+         :- [0.2] ([0.6]edge(A,A),[0.9]edge(B,C),[0.6]edge(C,A),[0.2]aux(C,A),[0.4]aux(C,C) )
+circular(A)
+         :- [0.5] ([0.8]edge(A,B),[0.5]edge(B,A),[0.4]aux(A,A),[0.2]aux(B,B),[0.5]circular(B) )
+------------------------------------------------------------------
+epoch= 2 cost= 6.3462973 elapsed :  0:00:01.738429 error OrderedDict([('circular', 4.776234)])
+aux(A,B)
+         :- [0.4] ([0.7]edge(B,A),[0.2]edge(B,C),[0.2]edge(C,B),[0.8]edge(C,C),[0.2]aux(A,C),[0.7]aux(B,B),[0.3]aux(B,C),[0.8]aux(C,A) )
+         :- [0.5] ([0.2]edge(A,A),[0.6]edge(A,C),[0.4]edge(C,A),[0.3]edge(C,B),[0.5]aux(A,A),[0.6]aux(A,B),[0.9]aux(A,C),[0.2]aux(B,B),[0.8]aux(C,A) )
+         :- [0.6] ([0.9]edge(A,C),[0.4]edge(C,A),[0.6]edge(C,B),[0.3]aux(A,A),[0.4]aux(A,C),[0.2]aux(C,C) )
+         :- [0.4] ([0.5]edge(A,A),[0.2]edge(A,C),[0.5]edge(B,B),[0.5]edge(C,A),[0.4]edge(C,C),[0.2]aux(A,C) )
+         :- [0.7] ([0.9]edge(B,C),[0.6]edge(C,B),[0.2]aux(A,A),[0.2]aux(A,C),[0.3]aux(C,B) )
+         :- [0.2] ([0.4]edge(A,B),[0.3]edge(A,C),[0.2]edge(B,A),[0.3]edge(B,B),[0.4]edge(C,B),[0.2]aux(A,C),[0.3]aux(C,B),[0.5]aux(C,C) )
+         :- [0.3] ([0.5]edge(A,A),[0.9]edge(B,C),[0.6]edge(C,A),[0.2]aux(B,C),[0.3]aux(C,A),[0.3]aux(C,C) )
+circular(A)
+         :- [0.6] ([0.8]edge(A,B),[0.4]edge(B,A),[0.5]aux(A,A),[0.2]aux(A,B),[0.4]circular(B) )
+------------------------------------------------------------------
+epoch= 3 cost= 5.924337 elapsed :  0:00:01.748879 error OrderedDict([('circular', 4.5001264)])
+aux(A,B)
+         :- [0.3] ([0.8]edge(B,B),[0.3]edge(B,C),[0.4]edge(C,A),[0.9]edge(C,B),[0.3]aux(B,A),[0.6]aux(B,B) )
+         :- [0.4] ([0.8]edge(B,A),[0.7]edge(C,C),[0.3]aux(A,C),[0.7]aux(B,B),[0.3]aux(B,C),[0.9]aux(C,A) )
+         :- [0.6] ([0.5]edge(A,C),[0.3]edge(C,A),[0.3]edge(C,B),[0.5]aux(A,A),[0.7]aux(A,B),[0.9]aux(A,C),[0.3]aux(B,B),[0.9]aux(C,A) )
+         :- [0.7] ([0.9]edge(A,C),[0.4]edge(C,A),[0.5]edge(C,B),[0.5]aux(A,A),[0.4]aux(A,C) )
+         :- [0.3] ([0.5]edge(A,A),[0.3]edge(A,C),[0.6]edge(B,B),[0.2]edge(B,C),[0.6]edge(C,A),[0.4]edge(C,C),[0.3]aux(A,C) )
+         :- [0.8] ([0.9]edge(B,C),[0.7]edge(C,B),[0.3]aux(A,A),[0.2]aux(B,A),[0.3]aux(C,B) )
+         :- [0.4] ([0.4]edge(A,A),[0.9]edge(B,C),[0.7]edge(C,A),[0.4]aux(C,A),[0.2]aux(C,C) )
+circular(A)
+         :- [0.6] ([0.8]edge(A,B),[0.3]edge(B,A),[0.6]aux(A,A),[0.3]aux(A,B),[0.4]circular(B) )
+------------------------------------------------------------------
+epoch= 4 cost= 5.4850883 elapsed :  0:00:01.739033 error OrderedDict([('circular', 4.2051196)])
+aux(A,B)
+         :- [0.4] ([0.7]edge(B,B),[0.2]edge(B,C),[0.5]edge(C,A),edge(C,B),[0.3]aux(B,A),[0.6]aux(B,B) )
+         :- [0.5] ([0.8]edge(B,A),[0.6]edge(C,C),[0.2]aux(A,A),[0.4]aux(A,C),[0.8]aux(B,B),[0.4]aux(B,C),[0.9]aux(C,A) )
+         :- [0.7] ([0.4]edge(A,C),[0.3]edge(C,A),[0.6]aux(A,A),[0.8]aux(A,B),[0.9]aux(A,C),[0.4]aux(B,B),[0.9]aux(C,A) )
+         :- [0.7] (edge(A,C),[0.3]edge(C,A),[0.4]edge(C,B),[0.6]aux(A,A),[0.4]aux(A,C) )
+         :- [0.3] ([0.6]edge(A,A),[0.3]edge(A,C),[0.6]edge(B,B),[0.3]edge(B,C),[0.6]edge(C,A),[0.5]edge(C,C),[0.3]aux(A,C),[0.2]aux(C,A) )
+         :- [0.8] ([0.9]edge(B,C),[0.6]edge(C,B),[0.4]aux(A,A),[0.3]aux(B,A),[0.2]aux(C,B) )
+         :- [0.5] ([0.4]edge(A,A),[0.9]edge(B,C),[0.7]edge(C,A),[0.2]aux(A,A),[0.3]aux(C,A) )
+circular(A)
+         :- [0.7] ([0.9]edge(A,B),[0.3]edge(B,A),[0.7]aux(A,A),[0.4]aux(A,B),[0.3]circular(B) )
+------------------------------------------------------------------
+epoch= 5 cost= 4.9698114 elapsed :  0:00:01.734048 error OrderedDict([('circular', 3.863922)])
+aux(A,B)
+         :- [0.5] ([0.5]edge(B,B),[0.6]edge(C,A),edge(C,B),[0.4]aux(B,B) )
+         :- [0.6] ([0.8]edge(B,A),[0.6]edge(C,C),[0.3]aux(A,A),[0.4]aux(A,C),[0.8]aux(B,B),[0.3]aux(B,C),[0.9]aux(C,A) )
+         :- [0.7] ([0.3]edge(A,C),[0.2]edge(C,A),[0.7]aux(A,A),[0.8]aux(A,B),[0.9]aux(A,C),[0.2]aux(B,A),[0.5]aux(B,B),[0.9]aux(C,A) )
+         :- [0.2] ([0.8]edge(B,C),[0.4]edge(C,A),[0.4]aux(B,A),[0.9]aux(B,B),[0.8]aux(B,C),[0.8]aux(C,A),[0.3]aux(C,B) )
+         :- [0.8] (edge(A,C),[0.2]edge(C,A),[0.4]edge(C,B),[0.7]aux(A,A),[0.2]aux(A,B),[0.5]aux(A,C),[0.3]aux(B,B) )
+         :- [0.3] ([0.6]edge(A,A),[0.3]edge(A,C),[0.6]edge(B,B),[0.3]edge(B,C),[0.7]edge(C,A),[0.2]edge(C,B),[0.5]edge(C,C),[0.3]aux(A,C),[0.2]aux(B,C),[0.2]aux(C,A) )
+         :- [0.8] (edge(B,C),[0.5]edge(C,B),[0.5]aux(A,A),[0.2]aux(A,C),[0.4]aux(B,A),[0.2]aux(C,B) )
+         :- [0.6] ([0.3]edge(A,A),edge(B,C),[0.8]edge(C,A),[0.2]aux(C,A) )
+circular(A)
+         :- [0.7] ([0.9]edge(A,B),[0.2]edge(B,A),[0.7]aux(A,A),[0.5]aux(A,B),[0.2]aux(B,B),[0.3]circular(B) )
+------------------------------------------------------------------
+epoch= 6 cost= 4.3723574 elapsed :  0:00:01.741407 error OrderedDict([('circular', 3.45573)])
+aux(A,B)
+         :- [0.6] ([0.5]edge(B,B),[0.7]edge(C,A),edge(C,B),[0.3]aux(B,B) )
+         :- [0.6] ([0.9]edge(B,A),[0.5]edge(C,C),[0.3]aux(A,A),[0.5]aux(A,C),[0.9]aux(B,B),[0.2]aux(B,C),[0.9]aux(C,A) )
+         :- [0.8] ([0.3]edge(A,C),[0.8]aux(A,A),[0.9]aux(A,B),[0.9]aux(A,C),[0.2]aux(B,A),[0.5]aux(B,B),[0.9]aux(C,A) )
+         :- [0.3] ([0.9]edge(B,C),[0.3]edge(C,A),[0.5]aux(B,A),[0.9]aux(B,B),[0.8]aux(B,C),[0.9]aux(C,A),[0.2]aux(C,B) )
+         :- [0.8] (edge(A,C),[0.3]edge(C,B),[0.7]aux(A,A),[0.3]aux(A,B),[0.6]aux(A,C),[0.4]aux(B,B) )
+         :- [0.3] ([0.6]edge(A,A),[0.4]edge(A,C),[0.7]edge(B,B),[0.3]edge(B,C),[0.7]edge(C,A),[0.2]edge(C,B),[0.5]edge(C,C),[0.2]aux(A,A),[0.4]aux(A,C),[0.2]aux(B,C),[0.3]aux(C,A) )
+         :- [0.9] (edge(B,C),[0.4]edge(C,B),[0.6]aux(A,A),[0.3]aux(A,C),[0.5]aux(B,A) )
+         :- [0.7] ([0.2]edge(A,A),edge(B,C),[0.9]edge(C,A) )
+circular(A)
+         :- [0.7] ([0.9]edge(A,B),[0.8]aux(A,A),[0.5]aux(A,B),[0.3]aux(B,B),[0.3]circular(B) )
+------------------------------------------------------------------
+epoch= 7 cost= 3.7486808 elapsed :  0:00:01.755419 error OrderedDict([('circular', 3.0145326)])
+aux(A,B)
+         :- [0.6] ([0.4]edge(B,B),[0.8]edge(C,A),edge(C,B),[0.3]aux(B,B) )
+         :- [0.7] ([0.9]edge(B,A),[0.4]edge(C,C),[0.4]aux(A,A),[0.6]aux(A,C),[0.9]aux(B,B),aux(C,A) )
+         :- [0.8] ([0.2]edge(A,C),[0.8]aux(A,A),[0.9]aux(A,B),aux(A,C),[0.4]aux(B,B),[0.9]aux(C,A) )
+         :- [0.3] ([0.9]edge(B,C),[0.2]edge(C,A),[0.5]aux(B,A),[0.9]aux(B,B),[0.9]aux(B,C),[0.9]aux(C,A) )
+         :- [0.8] (edge(A,C),[0.2]edge(C,B),[0.8]aux(A,A),[0.4]aux(A,B),[0.7]aux(A,C),[0.4]aux(B,B) )
+         :- [0.2] ([0.7]edge(A,A),[0.4]edge(A,C),[0.2]edge(B,A),[0.7]edge(B,B),[0.4]edge(B,C),[0.7]edge(C,A),[0.3]edge(C,B),[0.6]edge(C,C),[0.2]aux(A,A),[0.4]aux(A,C),[0.3]aux(B,C),[0.3]aux(C,A) )
+         :- [0.9] (edge(B,C),[0.3]edge(C,B),[0.6]aux(A,A),[0.2]aux(A,B),[0.4]aux(A,C),[0.6]aux(B,A),[0.2]aux(C,A) )
+         :- [0.7] (edge(B,C),[0.9]edge(C,A) )
+circular(A)
+         :- [0.8] ([0.9]edge(A,B),[0.8]aux(A,A),[0.6]aux(A,B),[0.3]aux(B,B),[0.3]circular(B) )
+------------------------------------------------------------------
+epoch= 8 cost= 3.0555935 elapsed :  0:00:01.728046 error OrderedDict([('circular', 2.5194035)])
+aux(A,B)
+         :- [0.6] ([0.4]edge(B,B),[0.9]edge(C,A),edge(C,B),[0.3]aux(B,B) )
+         :- [0.8] ([0.9]edge(B,A),[0.3]edge(C,C),[0.4]aux(A,A),[0.7]aux(A,C),[0.9]aux(B,B),aux(C,A) )
+         :- [0.9] ([0.8]aux(A,A),[0.9]aux(A,B),aux(A,C),[0.3]aux(B,B),[0.9]aux(C,A) )
+         :- [0.4] ([0.9]edge(B,C),[0.6]aux(B,A),[0.9]aux(B,B),[0.9]aux(B,C),[0.9]aux(C,A) )
+         :- [0.8] (edge(A,C),[0.8]aux(A,A),[0.5]aux(A,B),[0.8]aux(A,C),[0.5]aux(B,B),[0.2]aux(C,A) )
+         :- [0.2] ([0.7]edge(A,A),[0.4]edge(A,C),[0.2]edge(B,A),[0.7]edge(B,B),[0.4]edge(B,C),[0.7]edge(C,A),[0.3]edge(C,B),[0.6]edge(C,C),[0.2]aux(A,A),[0.4]aux(A,C),[0.3]aux(B,C),[0.3]aux(C,A) )
+         :- [0.9] (edge(B,C),[0.3]edge(C,B),[0.6]aux(A,A),[0.2]aux(A,B),[0.6]aux(A,C),[0.6]aux(B,A),[0.3]aux(C,A) )
+         :- [0.8] (edge(B,C),[0.9]edge(C,A) )
+circular(A)
+         :- [0.8] ([0.9]edge(A,B),[0.8]aux(A,A),[0.7]aux(A,B),[0.4]aux(B,B),[0.3]circular(B) )
+------------------------------------------------------------------
+epoch= 9 cost= 2.2950568 elapsed :  0:00:01.724068 error OrderedDict([('circular', 1.9628284)])
+aux(A,B)
+         :- [0.6] ([0.4]edge(B,B),[0.9]edge(C,A),edge(C,B),[0.2]aux(B,B) )
+         :- [0.8] ([0.9]edge(B,A),[0.3]edge(C,C),[0.3]aux(A,A),[0.8]aux(A,C),[0.8]aux(B,B),aux(C,A) )
+         :- [0.2] (edge(A,B),[0.9]edge(B,C),[0.4]aux(A,B),[0.3]aux(A,C),[0.3]aux(B,C),[0.3]aux(C,A) )
+         :- [0.9] ([0.7]aux(A,A),[0.9]aux(A,B),aux(A,C),[0.2]aux(B,B),aux(C,A) )
+         :- [0.4] ([0.9]edge(B,C),[0.6]aux(B,A),[0.9]aux(B,B),[0.9]aux(B,C),[0.9]aux(C,A) )
+         :- [0.8] (edge(A,C),[0.8]aux(A,A),[0.5]aux(A,B),[0.8]aux(A,C),[0.5]aux(B,B),[0.3]aux(C,A),[0.2]aux(C,B) )
+         :- [0.2] ([0.7]edge(A,A),[0.4]edge(A,C),[0.2]edge(B,A),[0.7]edge(B,B),[0.4]edge(B,C),[0.7]edge(C,A),[0.3]edge(C,B),[0.6]edge(C,C),[0.3]aux(A,A),[0.5]aux(A,C),[0.3]aux(B,C),[0.3]aux(C,A) )
+         :- [0.9] (edge(B,C),[0.2]edge(C,B),[0.6]aux(A,A),[0.2]aux(A,B),[0.7]aux(A,C),[0.5]aux(B,A),[0.4]aux(C,A) )
+         :- [0.9] (edge(B,C),edge(C,A) )
+circular(A)
+         :- [0.8] (edge(A,B),[0.8]aux(A,A),[0.7]aux(A,B),[0.5]aux(B,B),[0.2]circular(B) )
+------------------------------------------------------------------
+epoch= 10 cost= 0.15680152 elapsed :  0:00:01.737582 error OrderedDict([('circular', 0.15585452)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/aux_OR:0' shape=(1, 10) dtype=float32_ref> (0, 5)
+removing <tf.Variable 'ILP/aux_OR:0' shape=(1, 10) dtype=float32_ref> (0, 7)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (0, 4)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (4, 2)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (4, 5)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (4, 9)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (4, 12)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (5, 2)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (5, 9)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (5, 10)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (5, 11)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (5, 13)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (5, 15)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (6, 0)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (6, 4)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (6, 6)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (7, 5)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (7, 10)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (7, 11)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (7, 15)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (8, 1)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (8, 2)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (8, 4)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (8, 7)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (1, 1)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (1, 5)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (1, 6)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (3, 0)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (3, 2)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (3, 3)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (3, 4)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (3, 5)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (3, 7)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (3, 9)
+weights in ILP/aux_AND:0 are not converged yet :  29.000000
+weights in ILP/aux_OR:0 are not converged yet :  3.000000
+aux(A,B)
+         :- [0.5] (edge(C,A),edge(C,B),[0.5]aux(A,B) )
+         :- (edge(B,A),aux(A,C),aux(C,A) )
+         :- [0.8] (edge(A,B),edge(B,C),aux(A,C) )
+         :- (aux(A,B),aux(A,C),aux(C,A) )
+         :- [0.4] ([0.2]aux(A,B),[0.4]aux(A,C),[0.9]aux(B,B),aux(B,C),aux(C,A) )
+         :- (edge(B,C),edge(C,A) )
+circular(A)
+         :- [0.5] (aux(A,A),aux(A,B),circular(A) )
+         :- [0.9] (edge(A,B),aux(A,A),aux(A,B),[0.2]aux(B,A),[0.9]aux(B,B) )
+------------------------------------------------------------------
+epoch= 11 cost= 0.020074876 elapsed :  0:00:07.461061 error OrderedDict([('circular', 0.021143615)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/circular_OR:0' shape=(1, 4) dtype=float32_ref> (0, 0)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (0, 10)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (1, 11)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (4, 11)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (6, 2)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (6, 5)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (6, 11)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (6, 14)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (8, 3)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (8, 11)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (8, 16)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (0, 4)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (0, 5)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (0, 8)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (1, 2)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (1, 4)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (1, 8)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (3, 1)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (3, 8)
+weights in ILP/aux_AND:0 are not converged yet :  12.000000
+weights in ILP/aux_OR:0 are not converged yet :  3.000000
+aux(A,B)
+         :- [0.2] (edge(C,A),edge(C,B) )
+         :- (edge(B,A),aux(C,A) )
+         :- [0.9] (edge(A,B),edge(B,C),aux(A,C) )
+         :- (aux(A,B),aux(A,C),aux(C,A) )
+         :- (edge(B,C),edge(C,A) )
+circular(A)
+         :- (edge(A,B),aux(A,A),aux(A,B),aux(B,B) )
+------------------------------------------------------------------
+epoch= 12 cost= 0.051445603 elapsed :  0:00:05.881610 error OrderedDict([('circular', 0.05237907)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (1, 15)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (2, 1)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (6, 15)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (8, 17)
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (2, 7)
+weights in ILP/aux_AND:0 are not converged yet :  10.000000
+aux(A,B)
+         :- (edge(B,A) )
+         :- [0.9] (edge(B,C),aux(A,C) )
+         :- (aux(A,B),aux(A,C),aux(C,A) )
+         :- (edge(B,C),edge(C,A) )
+circular(A)
+         :- (edge(A,B),aux(A,A),aux(A,B) )
+weights in ILP/aux_AND:0 are not converged yet :  10.000000
+------------------------------------------------------------------
+epoch= 13 cost= 0.0037177338 elapsed :  0:00:04.582906 error OrderedDict([('circular', 0.0048155785)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/aux_OR:0' shape=(1, 10) dtype=float32_ref> (0, 1)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (1, 3)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (3, 11)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (4, 10)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (4, 13)
+weights in ILP/aux_AND:0 are not converged yet :  4.000000
+aux(A,B)
+         :- (edge(B,C),aux(A,C) )
+         :- (aux(A,B),aux(C,A) )
+         :- (edge(B,C),edge(C,A) )
+circular(A)
+         :- (edge(A,B),aux(A,A),aux(A,B) )
+weights in ILP/aux_AND:0 are not converged yet :  4.000000
+------------------------------------------------------------------
+epoch= 14 cost= 0.0016070094 elapsed :  0:00:04.320289 error OrderedDict([('circular', 0.0027049184)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/aux_OR:0' shape=(1, 10) dtype=float32_ref> (0, 3)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (0, 6)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (0, 7)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (3, 10)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (3, 15)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (4, 14)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (4, 15)
+removing <tf.Variable 'ILP/aux_AND:0' shape=(10, 18) dtype=float32_ref> (6, 8)
+weights in ILP/aux_AND:0 are not converged yet :  1.000000
+aux(A,B)
+         :- (edge(B,C),aux(A,C) )
+         :- (edge(B,C),edge(C,A) )
+circular(A)
+         :- (edge(A,B),aux(A,A),aux(A,B) )
+weights in ILP/aux_AND:0 are not converged yet :  1.000000
+------------------------------------------------------------------
+epoch= 15 cost= 0.0073727155 elapsed :  0:00:03.992184 error OrderedDict([('circular', 0.008468807)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (2, 1)
+weights in ILP/aux_AND:0 are not converged yet :  1.000000
+aux(A,B)
+         :- (edge(B,C),aux(A,C) )
+         :- (edge(B,C),edge(C,A) )
+circular(A)
+         :- (aux(A,A),aux(A,B) )
+weights in ILP/aux_AND:0 are not converged yet :  1.000000
+------------------------------------------------------------------
+epoch= 16 cost= 0.0032964423 elapsed :  0:00:03.348184 error OrderedDict([('circular', 0.004394114)])
+start removing non necessary clauses
+removing <tf.Variable 'ILP/circular_AND:0' shape=(4, 10) dtype=float32_ref> (2, 5)
+aux(A,B)
+         :- (edge(B,C),aux(A,C) )
+         :- (edge(B,C),edge(C,A) )
+circular(A)
+         :- (aux(A,A) )
+optimization finished !
